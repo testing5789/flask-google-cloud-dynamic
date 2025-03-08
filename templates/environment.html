@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Environment - My Python Web App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        nav {
+            margin-bottom: 20px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        nav a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        .env-info {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .env-item {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/environment">Environment</a>
+    </nav>
+    
+    <h1>Cloud Run Environment Information</h1>
+    
+    <p>This page displays information about the Cloud Run environment where this application is running.</p>
+    
+    <div class="env-info">
+        {% for key, value in env_info.items() %}
+        <div class="env-item">
+            <strong>{{ key }}:</strong> {{ value }}
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
